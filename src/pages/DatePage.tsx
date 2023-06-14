@@ -4,6 +4,7 @@ import Arrow from '../components/Arrow'
 import CalendarComponent from '../components/CalanderComponent'
 import TimeBlock from '../components/TimeBlock'
 import {parseISO} from 'date-fns'
+import LoadingComponent from '../components/LoadingComponent'
 
 
 const DatePage = () => {
@@ -120,6 +121,14 @@ const DatePage = () => {
   const disabledDates = availableDates?.map((date) => parseISO(date.toString()))
 
 
+  //LOADING CONDITION
+  if(!disabledDates){
+    return (
+      <LoadingComponent/>
+    )
+  }
+
+
   return (
     <div
     className=" min-h-[100vh] flex flex-col items-center px-2 mt-10 lg:flex-row lg:items-start lg:justify-around"
@@ -129,7 +138,7 @@ const DatePage = () => {
         </div>
         <div className="w-full lg:w-2/5 h-1/3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10">
             {timeBlocks?.map((time,index) => (
-                <TimeBlock key={index} time={time} setTime={handleTimeSelection} selectedTime={selectedTime}/>
+              <TimeBlock key={index} time={time} setTime={handleTimeSelection} selectedTime={selectedTime}/>
             ))}
         </div>
 
