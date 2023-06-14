@@ -16,7 +16,7 @@ type Props = {
     secondaryActionLabel?: string
 }
 
-const Modal = ({isOpen, disabled, onClose, onSubmit, secondaryAction, title, body, footer, actionLabel, secondaryActionLabel}: Props) => {
+const Modal = ({isOpen, disabled, onClose, onSubmit, title, body, footer, actionLabel}: Props) => {
 
   const [showModal, setShowModal] = useState(isOpen)  
 
@@ -44,13 +44,6 @@ const Modal = ({isOpen, disabled, onClose, onSubmit, secondaryAction, title, bod
     onSubmit()
   },[disabled, onSubmit])
 
-  const handleSecondaryAction = useCallback(() => {
-    if(disabled || !secondaryAction){
-        return
-    }
-
-    secondaryAction()
-  },[disabled, secondaryAction])
 
   if(!isOpen) {
     return null
