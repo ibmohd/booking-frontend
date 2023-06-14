@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import { OrderDetails } from '../types'
 import CheckoutItem from '../components/CheckoutItem'
+import LoadingComponent from '../components/LoadingComponent'
 
 
 
@@ -27,6 +28,13 @@ const OrderReceiptPage = () => {
         getReceiptDetails()
 
     },[appointment_id])
+
+    //LOADING CONDITION
+  if(!receiptDetails){
+    return (
+      <LoadingComponent/>
+    )
+  }
 
 
   return (
