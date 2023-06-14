@@ -1,0 +1,120 @@
+/* Google Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Signika&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes loading {
+    0%{
+        background-color: #D3D3D3;
+    }
+    100% {
+        background-color: green;
+    }
+}
+@keyframes load-icon {
+    0%{
+      border-radius: 0%;
+    }
+    100% {
+      border-radius: 90%;
+    }
+}
+
+.animate-loading {
+    animation: loading 2s 1 forwards;
+}
+
+.animate-icon-loading {
+  animation: load-icon 1.5s 1 forwards;
+}
+
+/* Calander component resizing */
+.rdrMonth {
+    width: 100% !important;
+  }
+.rdrCalendarWrapper {
+  font-size: 16px !important;
+  width: 100% !important
+}
+
+.animate-speed{
+  animation: speed 2s infinite ease-in-out;
+}
+
+@keyframes speed {
+  0% {
+    transform: translate(0%);
+    border-radius: 50%;
+  }
+  25% {
+    transform: translate(150%) scale(0.5);
+    border-radius: 0%;
+  }
+  50% {
+    transform: translate(150%, 150%);
+    border-radius: 50%;
+  }
+  75% {
+    transform: translate(0, 150%) scale(0.5);
+    border-radius: 0%;
+  }
+}
+
+#animation-container span:nth-child(1) {
+  background: #4285f4;
+  animation-delay: 1.5s;
+}
+#animation-container span:nth-child(2) {
+  background: #ea4335;
+  animation-delay: 1s;
+}
+#animation-container span:nth-child(3) {
+  background: #fbbc05;
+  animation-delay: 0.5s;
+}
+#animation-container span:nth-child(4) {
+  background: #34a853;
+}
+
+.animate-box-loader{
+  animation: box-loader 2s infinite ease-in-out;
+}
+
+
+@keyframes box-loader {
+  0% {transform:rotate(-45deg)}
+  50%{transform:rotate(-135deg)}
+  100%{transform:rotate(-225deg)}
+}
+
+.animate-box-loader span:nth-child(1) {
+  animation: span-1 2s ease-in-out infinite;
+}
+.animate-box-loader span:nth-child(2) {
+  animation: span-2 2s ease-in-out infinite;
+}
+.animate-box-loader span:nth-child(3) {
+  animation: span-3 2s ease-in-out infinite;
+}
+.animate-box-loader span:nth-child(4) {
+  animation: span-4 2s ease-in-out infinite;
+}
+
+@keyframes span-1 {
+  0% {transform:translate(0);}
+  50%{transform:translate(-50px, 0);border-color:#EE4D68}
+  100%{transform:translate(0);}}
+@keyframes span-2 {
+  0%{transform:translate(0);}
+  50%{transform:translate(50px, 0);border-color:#875678}
+  100%{transform:translate(0);}}
+@keyframes span-3 {
+  0%{transform:translate(0);}
+  50%{transform:translate(0, -50px);border-color:#FF9900}
+  100%{transform:translate(0);}}
+@keyframes span-4 {
+  0%{transform:translate(0);}
+  50%{transform:translate(0, 50px);border-color:#00E4F6}
+  100%{transform:translate(0);}}
+
