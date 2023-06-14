@@ -75,8 +75,8 @@ const ReservationPage = () => {
             // 'Content-Type': 'application/x-www-form-urlencoded',
           },
           body: JSON.stringify({
-              employee_id: validProfessional,
-              services: validServices,
+              employee_id: professional && decodeURIComponent(professional),
+              services: services?.split(',').filter(str => str.length>1 && decodeURIComponent(str)),
           })
         })
         .then(async (res) => {
@@ -91,7 +91,7 @@ const ReservationPage = () => {
 
     getAppointmentData()
 
-  },[validProfessional,validServices])
+  },[professional,services])
 
   const setTip = (value: number) => {
     setTipAmount(value)
