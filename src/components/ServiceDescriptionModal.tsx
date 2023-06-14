@@ -1,4 +1,3 @@
-import { useState } from "react"
 import Modal from "./Modal"
 import { Service } from "../types";
 
@@ -11,8 +10,6 @@ type Props = {
 }
 
 const ServiceDescriptionModal = ({handleOpen,open,handleSelection,service,selectedServices}:Props) => {
-
-  const [isLoading, setIsLoading] = useState(false)
 
   if(!service) return null
 
@@ -38,7 +35,7 @@ const ServiceDescriptionModal = ({handleOpen,open,handleSelection,service,select
   
   return (
     <Modal
-        disabled={isLoading}
+        disabled={false}
         isOpen={open}
         title={`${service.title}`}
         actionLabel={selectedServices.includes(service) ? `Remove`:`Add`}
